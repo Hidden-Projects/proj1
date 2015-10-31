@@ -1,3 +1,18 @@
 <h3>Trainer</h3>
 <p>Name: <%= @trainer.name if @trainer.name %></p>
 <p>Email: <%= @trainer.email if @trainer.email %></p>
+<p><%= 'Pokemon:' if @trainer.pokemons %></p>
+<% @trainer.pokemons.each do |p| %>
+  <div   <%= 'style=display:none' if p.dead and @trainer != current_trainer %> >
+    <div <%= 'style=display:none' if !p.dead %> <blockquote><h3> Heal me! :( </h3></blockquote></div>
+    <blockquote>Name:   <%= p.name %></blockquote>
+    <blockquote>Level:  <%= p.level %></blockquote>
+    <blockquote>Health: <%= p.health %>
+      <%= button_to "Damage", damage_path(id: @trainer, pid: p), :class => "button small", :method => :patch %>
+      <% if @trainer == current_trainer %>
+        <%= button_to "Heal", heal_path(id: @trainer, pid: p), :class => "button small", :method => :patch %>
+      <% end %>
+    </blockquote>
+    <hr />
+  </div>
+<% end %>
