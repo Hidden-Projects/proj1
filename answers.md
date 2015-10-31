@@ -26,7 +26,10 @@
 #   the webcast would be an acceptable substitute to coming to lecture.  I often have conflicts with
 #   lecture -- Plus, the lecture is pretty late, so it's hard to stay completely awake and focused.
 
+# I also did the healing extra credit!
+
+# Git Repo:
+#    https://github.com/n-patel/proj1
 
 # Extra credit: Link your Heroku deployed app
-
-# I also did the healing extra credit!
+#    https://sleepy-fjord-9833.herokuapp.com
